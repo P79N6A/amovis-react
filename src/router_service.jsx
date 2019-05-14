@@ -1,8 +1,7 @@
 /**
  * 定义应用路
  */
-import { BrowserRouter } from 'react-router-dom';
-import { Switch, Route } from 'react-router';
+import { Switch, Route, StaticRouter } from 'react-router';
 import React from 'react';
 
 import routerConfig from './routerConfig';
@@ -17,7 +16,7 @@ function recursiveRouterConfigV4(config = []) {
     const route = {
       path: item.path,
       layout: item.layout,
-      component: item.component ? item.component : CommonPage,
+      component: CommonPage,
       modules: item.modules,
     };
     if (Array.isArray(item.children)) {
@@ -121,4 +120,4 @@ function renderRouterConfigV4(container, router, contextPath) {
 
 const routerWithReactRouter4 = recursiveRouterConfigV4(routerConfig);
 const routeChildren = renderRouterConfigV4(null, routerWithReactRouter4, '/');
-export default <BrowserRouter>{routeChildren}</BrowserRouter>;
+export default routeChildren;
