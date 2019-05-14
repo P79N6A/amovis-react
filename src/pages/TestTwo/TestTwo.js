@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import * as M from '../../components/Module';
 
-console.log(M)
-
 const cre = React.createElement
 
-@withRouter
 export default class TestTwo extends Component {
 
   getViews = (data) => {

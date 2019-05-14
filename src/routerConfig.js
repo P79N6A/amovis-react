@@ -15,65 +15,99 @@ import AddGoods from './pages/AddGoods';
 import TestOne from './pages/TestOne';
 import TestTwo from './pages/TestTwo';
 import TestForm from './pages/TestForm';
-import Page15 from './pages/Page15';
 import App from './pages/App';
-
+import CommonPage from './pages/CommonPage';
 const routerConfig = [
   {
     path: '/membership',
-    component: Membership,
+    modules: {
+      'header': [{
+        "main": [
+          { 'project_name': 'uploadzone', 'module_name': 'ModuleOne', 'page_name': 'index', 'position': 1, 'module_data': [{id: 1, name: 2}] },
+          { 'project_name': 'uploadzone', 'module_name': 'ModuleTwo', 'page_name': 'index', 'position': 1 }
+        ]
+      },],
+      'content': [
+        {
+          "main": [
+            { 'project_name': 'uploadzone', 'module_name': 'ModuleOne', 'page_name': 'index', 'position': 1 },
+          ]
+        },
+        {
+          'sub_min': [
+            { 'project_name': 'uploadzone', 'module_name': 'ModuleTwo', 'page_name': 'index', 'position': 1 },
+            { 'project_name': 'uploadzone', 'module_name': 'ModuleOne', 'page_name': 'index', 'position': 1 }
+          ], 
+          'sub_max': [
+            { 'project_name': 'uploadzone', 'module_name': 'ModuleTwo', 'page_name': 'index', 'position': 2 }
+          ]
+        },
+      ]
+    }
   },
   {
     path: '/user/login',
-    component: UserLogin,
   },
   {
     path: '/dashboard',
-    component: Dashboard,
   },
   {
     path: '/reserve',
-    component: Reserve,
   },
   {
     path: '/asset',
-    component: Asset,
   },
   {
     path: '/goods',
-    component: Goods,
   },
   {
     path: '/order',
-    component: OrderList,
   },
   {
     path: '/user/register',
-    component: UserRegister,
   },
   {
     path: '/add/reserve',
-    component: AddReserve,
   },
   {
     path: '/add/goods',
-    component: AddGoods,
   },
   {
     path: '/test/one',
-    component: TestTwo,
   },
   {
     path: '/test/two',
-    component: TestTwo,
   },
   {
     path: '/test/form',
-    component: TestForm,
   },
   {
     path: '/page15',
-    component: Page15,
+    modules: {
+      'header': [{
+        "main": [
+          { 'project_name': 'uploadzone', 'module_name': 'ModuleOne', 'page_name': 'index', 'position': 1, 'module_data': [{id: 1, name: 2}] },
+          { 'project_name': 'uploadzone', 'module_name': 'ModuleTwo', 'page_name': 'index', 'position': 1 }
+        ]
+      },],
+      'content': [
+        {
+          "main": [
+            { 'project_name': 'uploadzone', 'module_name': 'ModuleOne', 'page_name': 'index', 'position': 1 },
+            { 'project_name': 'uploadzone', 'module_name': 'ModuleTwo', 'page_name': 'index', 'position': 1 }
+          ]
+        },
+        {
+          'sub_min': [
+            { 'project_name': 'uploadzone', 'module_name': 'ModuleTwo', 'page_name': 'index', 'position': 1 },
+            { 'project_name': 'uploadzone', 'module_name': 'ModuleOne', 'page_name': 'index', 'position': 1 }
+          ], 
+          'sub_max': [
+            { 'project_name': 'uploadzone', 'module_name': 'ModuleTwo', 'page_name': 'index', 'position': 2 }
+          ]
+        },
+      ]
+    }
   },
 ];
 

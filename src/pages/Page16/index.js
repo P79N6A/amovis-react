@@ -11,7 +11,6 @@ export default class Page15 extends Component {
   }
 
   getContent = (sectionItem) => {
-    console.log(sectionItem)
     return(
       <React.Fragment>
         {
@@ -45,6 +44,8 @@ export default class Page15 extends Component {
   }
 
   setLayout = (data) => {
+    console.log(data);
+    return <div/>
     return (
       <React.Fragment>
         {
