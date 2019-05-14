@@ -79,10 +79,7 @@ const routerConfig = [
     path: '/test/two',
   },
   {
-    path: '/test/form',
-  },
-  {
-    path: '/page15',
+    path: '/',
     modules: {
       'header': [{
         "main": [
@@ -101,6 +98,34 @@ const routerConfig = [
           'sub_min': [
             { 'project_name': 'uploadzone', 'module_name': 'ModuleTwo', 'page_name': 'index', 'position': 1 },
             { 'project_name': 'uploadzone', 'module_name': 'ModuleOne', 'page_name': 'index', 'position': 1 }
+          ], 
+          'sub_max': [
+            { 'project_name': 'uploadzone', 'module_name': 'ModuleTwo', 'page_name': 'index', 'position': 2 }
+          ]
+        },
+      ]
+    }
+  },
+  {
+    path: '/page15',
+    modules: {
+      'header': [{
+        "main": [
+          // { 'project_name': 'uploadzone', 'module_name': 'ModuleOne', 'page_name': 'index', 'position': 1, 'module_data': [{id: 1, name: 2}] },
+          { 'project_name': 'uploadzone', 'module_name': 'ModuleTwo', 'page_name': 'index', 'position': 1 }
+        ]
+      },],
+      'content': [
+        {
+          "main": [
+            // { 'project_name': 'uploadzone', 'module_name': 'ModuleOne', 'page_name': 'index', 'position': 1 },
+            { 'project_name': 'uploadzone', 'module_name': 'ModuleTwo', 'page_name': 'index', 'position': 1 }
+          ]
+        },
+        {
+          'sub_min': [
+            { 'project_name': 'uploadzone', 'module_name': 'ModuleTwo', 'page_name': 'index', 'position': 1 },
+            // { 'project_name': 'uploadzone', 'module_name': 'ModuleOne', 'page_name': 'index', 'position': 1 }
           ], 
           'sub_max': [
             { 'project_name': 'uploadzone', 'module_name': 'ModuleTwo', 'page_name': 'index', 'position': 2 }
