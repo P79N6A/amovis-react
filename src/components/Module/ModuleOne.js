@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const MO = ({ children }) => {
+  
   return (
     <div 
       style={{ padding: '20px', display: 'flex', flex: 1, background: 'green'}}
