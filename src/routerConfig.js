@@ -85,5 +85,4 @@ const devRouterConfig = [
   }
 ];
 const routerConfig = global.pageApiData ? global.pageApiData : (window.pageApiData ? window.pageApiData : devRouterConfig);
-console.log(routerConfig);
 export default routerConfig;
