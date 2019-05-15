@@ -53,11 +53,12 @@
   },
   "buildConfig": {
     "theme": "@icedesign/theme",
-    "entry": "src/index.js",
+    "entry": {"client": "src/index.js", "server": "src/indexForBackEnd.js"},
     "localization": false,
     "output": {
       "publicPath": "./"
-    }
+    },
+    "disableVendor": true
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",

@@ -8,7 +8,7 @@ const MT = (props) => {
     <div  
       style={{ padding: '20px', display: 'flex', flex: 2, background: 'red'}}>
       <Link to="/">首页</Link>
-      <div>module two</div>
+      <div>project1-------module two</div>
       <div>{ JSON.stringify(module_data) } </div>
       {/* <div style={{ padding: 18, border: '1px solid black'}}>子层{children}</div> */}
     </div>

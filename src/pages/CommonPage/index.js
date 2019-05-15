@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import * as M from '../../components/Module';
+import * as B from '../../Block';
 import './test.scss'
+
+
+console.log(B['project1'].ModuleOne)
 
 const cre = React.createElement
 
@@ -10,13 +14,16 @@ export default class CommonPage extends Component {
     this.state = {};
   }
 
-  getContent = (sectionItem) => {
+  getDetail = (sectionItem) => {
     return(
       <React.Fragment>
         {
           Object.values(sectionItem).map((cn, j) => {
+            let projectName = cn.project_name
+            let moduleName = cn.module_name
+            let moduleData = cn.module_data 
             return (
-              cre(M[cn.module_name], {key: j}, null)
+              cre(B[projectName][moduleName], { key: j, moduleData }, null)
             )
           })
         }
@@ -29,17 +36,29 @@ export default class CommonPage extends Component {
       <React.Fragment>
       {
         sections.length && sections.map((section, i) => {
-          return Object.values(section).map((sectionItem, j) => {
-            let className = Object.keys(section)[j];
-            return (
-              <div key={`section-${j}`} className={`${className}`}>
-                { this.getContent(sectionItem) }
-              </div>
-            )
-          })
+          return (
+            cre('div', { key: i }, null, this.getContent(section))
+          )
         })
       }
     </React.Fragment>
+    )
+  }
+
+  getContent = (section) => {
+    return (
+      <React.Fragment>
+        {
+          Object.values(section).map((sectionItem, j) => {
+            let className = Object.keys(section)[j];
+            return (
+              <div key={`section-${j}`} className={`${className}`}>
+                { this.getDetail(sectionItem) }
+              </div>
+            )
+          })
+        }
+      </React.Fragment>
     )
   }
 
