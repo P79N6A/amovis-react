@@ -29,8 +29,8 @@ export default class CommonPage extends Component {
       <React.Fragment>
       {
         sections.length && sections.map((section, i) => {
-          let className = Object.keys(section)[i]
           return Object.values(section).map((sectionItem, j) => {
+            let className = Object.keys(section)[j];
             return (
               <div key={`section-${j}`} className={`${className}`}>
                 { this.getContent(sectionItem) }
