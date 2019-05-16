@@ -23,7 +23,7 @@ export default class CommonPage extends Component {
             let moduleName = cn.module_name
             let moduleData = cn.module_data 
             return (
-              cre(B[projectName][moduleName], { key: j, moduleData }, null)
+              cre(B[projectName][moduleName], { key: j, ...moduleData }, null)
             )
           })
         }
