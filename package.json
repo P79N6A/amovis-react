@@ -53,7 +53,7 @@
   },
   "buildConfig": {
     "theme": "@icedesign/theme",
-    "entry": {"client": "src/index.js", "server": "src/indexForBackEnd.js"},
+    "entry": {"web":"src/index.js","server":"src/indexForBackEnd"},
     "localization": false,
     "output": {
       "publicPath": "./"
