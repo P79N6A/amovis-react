@@ -1,11 +1,22 @@
 var path = require('path');
-module.exports = {
+var config = {
   devServer: {
     historyApiFallback: true,    
-  },
-  entry: {"block":"src/Block/index.js"},
-  output: {
-    library: 'blocks',
-    path: path.resolve(__dirname, 'library'),
   }
 };
+var libraryBlock = false;
+process.argv.forEach(function (val, index, array) {
+  var params =  val.split(":");
+  if(params.length === 2 && "library" === params[0] && 'true'===params[1]){
+    libraryBlock = true;
+    return;
+  }
+});
+if(true === libraryBlock){
+  config.entry = {"block":"src/Block/index.js"};
+  config.output = {
+    library: 'blocks',
+    path: path.resolve(__dirname, 'library'),
+  };
+}
+module.exports = config;
