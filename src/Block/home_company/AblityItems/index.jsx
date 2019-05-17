@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 export default class AblityItems extends Component {
   static displayName = 'AblityItems';
 
@@ -16,6 +16,7 @@ export default class AblityItems extends Component {
     const module_data = this.props;
     return (
       <div className="hy-ability" style={style.hyAbilityStyles}>
+        <Link to="/page15">page15</Link>
         <div className="hy-ability-item" style={style.hyAbilityItemStyle}>
           <img
             alt=""

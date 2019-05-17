@@ -2,7 +2,7 @@
  * 定义应用路
  */
 import { BrowserRouter } from 'react-router-dom';
-import { Switch, Route } from 'react-router';
+import { Switch, Route,Redirect } from 'react-router';
 import React from 'react';
 
 import routerConfig from './routerConfig';
@@ -115,7 +115,9 @@ function renderRouterConfigV4(container, router, contextPath) {
   router.forEach((r) => {
     renderRoute(container, r, contextPath);
   });
-
+  routeChildren.push(
+    <Redirect to="/"/>
+  );
   return <Switch>{routeChildren}</Switch>;
 }
 
