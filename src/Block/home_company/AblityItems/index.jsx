@@ -17,6 +17,7 @@ export default class AblityItems extends Component {
     return (
       <div className="hy-ability" style={style.hyAbilityStyles}>
         <Link to="/page15">page15</Link>
+        { JSON.stringify(module_data) }
         <div className="hy-ability-item" style={style.hyAbilityItemStyle}>
           <img
             alt=""

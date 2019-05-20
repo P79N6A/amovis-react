@@ -48,7 +48,8 @@
   "scripts": {
     "start": "ice dev",
     "build": "ice build",
-    "buildlib": "ice build library:true",
+    "build_all": "ice build --debug&& ice build library:true --skip-demo --debug",
+    "build_lib": "ice build library:true --skip-demo",
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext '.js,.jsx' --fix"
   },

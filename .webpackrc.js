@@ -15,7 +15,7 @@ process.argv.forEach(function (val, index, array) {
 if(true === libraryBlock){
   config.entry = {"block":"src/Block/index.js"};
   config.output = {
-    library: 'blocks',
+    library: 'LIBRARY_BLOCKS',
     path: path.resolve(__dirname, 'library'),
   };
 }

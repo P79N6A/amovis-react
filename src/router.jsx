@@ -1,8 +1,7 @@
 /**
  * 定义应用路
  */
-import { BrowserRouter } from 'react-router-dom';
-import { Switch, Route,Redirect } from 'react-router';
+import { Switch, Route, Redirect } from 'react-router';
 import React from 'react';
 
 import routerConfig from './routerConfig';
@@ -116,11 +115,11 @@ function renderRouterConfigV4(container, router, contextPath) {
     renderRoute(container, r, contextPath);
   });
   routeChildren.push(
-    <Redirect to="/"/>
+    <Redirect to="/" />
   );
   return <Switch>{routeChildren}</Switch>;
 }
 
 const routerWithReactRouter4 = recursiveRouterConfigV4(routerConfig);
 const routeChildren = renderRouterConfigV4(null, routerWithReactRouter4, '/');
-export default <BrowserRouter>{routeChildren}</BrowserRouter>;
+export default routeChildren;
