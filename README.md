@@ -1,5 +1,5 @@
 # amovis-react
-
+![飞冰](https://user-images.githubusercontent.com/677114/40338709-3c75fe4a-5da9-11e8-9874-c17445ed673b.png")
 ## 使用
 
 - 启动调试服务: `npm start`
