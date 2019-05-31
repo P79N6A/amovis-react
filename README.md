@@ -1,20 +1,19 @@
-# ice-commodity-management-admin
+# amovis-react
 
 ## 使用
 
 - 启动调试服务: `npm start`
-- 构建 dist: `npm run build`
-
+- 构建前端 dist: `npm run build`
+- 构建前后端 dist: `npm run build_all`
 ## 目录结构
 
 - react-router @4.x 默认采用 hashHistory 的单页应用
 - 入口文件: `src/index.js`
-- 导航配置: `src/menuConfig.js`
-- 路由配置: `src/routerConfig.js`
+- 路由配置: `src/router_config.json`
 - 路由入口: `src/router.jsx`
-- 布局文件: `src/layouts`
-- 通用组件: `src/components`
-- 页面文件: `src/pages`
+- 布局文件: `src/router_config.json`
+- 通用块: `src/Block`
+- 页面文件: `src/pages` 只有一个页面文件，页面内容根据src/router_config.json自动产生
 
 ## 主题配置
 
@@ -23,4 +22,4 @@
 
 ## 效果图
 
-![screenshot](https://img.alicdn.com/tfs/TB1cmQaCZbpK1RjSZFyXXX_qFXa-2872-1580.png)
+部署中
