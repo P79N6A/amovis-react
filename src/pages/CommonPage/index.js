@@ -3,9 +3,6 @@ import * as M from '../../components/Module';
 import * as B from '../../Block';
 import './test.scss'
 
-
-console.log(B['project1'].ModuleOne)
-
 const cre = React.createElement
 
 export default class CommonPage extends Component {
@@ -15,48 +12,67 @@ export default class CommonPage extends Component {
   }
 
   getDetail = (sectionItem) => {
-    return(
+    return (
       <React.Fragment>
         {
           Object.values(sectionItem).map((cn, j) => {
             let projectName = cn.project_name
             let moduleName = cn.module_name
-            let moduleData = cn.module_data 
+            let moduleData = cn.module_data
             return (
               cre(B[projectName][moduleName], { key: j, ...moduleData }, null)
             )
           })
         }
       </React.Fragment>
-    ) 
+    )
   }
 
-  getSections= (sections) => {
+  reduceBlockItem = (section) => {
+    return Object.values(sections).map((sectionItem, j) => {
+      let className = Object.keys(section)[j];
+      return (
+        <div key={`section-${j}`} className={`${className}`}>
+          {this.getDetail(sectionItem)}
+        </div>
+      )
+    });
+  }
+  getColContent = (section) => {
+    return Object.values(section).map((sectionItem, j) => {
+      let className = Object.keys(section)[j];
+      return (
+        <div key={`section-${j}`} className={`${className}`}>
+          {this.getDetail(sectionItem)}
+        </div>
+      )
+    });
+  }
+  getSections = (sections) => {
     return (
       <React.Fragment>
-      {
-        sections.length && sections.map((section, i) => {
-          return (
-            cre('div', { key: i }, null, this.getContent(section))
-          )
-        })
-      }
-    </React.Fragment>
+        {
+          sections.length && sections.map((section, i) => {
+            return this.getContent(section)
+          })
+        }
+      </React.Fragment>
     )
+  }
+
+  colMain = (section) => {
+    if (Object.values(section).length > 1) {
+      return cre("div", { className: "col_main" }, this.getColContent(section));
+    } else {
+      return this.getColContent(section);
+    }
   }
 
   getContent = (section) => {
     return (
       <React.Fragment>
         {
-          Object.values(section).map((sectionItem, j) => {
-            let className = Object.keys(section)[j];
-            return (
-              <div key={`section-${j}`} className={`${className}`}>
-                { this.getDetail(sectionItem) }
-              </div>
-            )
-          })
+          this.colMain(section)
         }
       </React.Fragment>
     )
@@ -68,10 +84,10 @@ export default class CommonPage extends Component {
         {
           Object.keys(data).map((layout, i) => {
             return (
-              <div className={layout} key={`layout-${i}`}>
-              {
-                data[layout].length ? this.getSections(data[layout]) : <div className={`${layout}`}></div>
-              }
+              <div id={layout} key={`layout-${i}`}>
+                {
+                  data[layout].length ? this.getSections(data[layout]) : <div className={`${layout}`}></div>
+                }
               </div>
             )
           })
@@ -82,8 +98,8 @@ export default class CommonPage extends Component {
 
   render() {
     return (
-      <div className="page">
-        { this.setLayout(this.props.data)}
+      <div id="page">
+        {this.setLayout(this.props.data)}
       </div>
     )
   }

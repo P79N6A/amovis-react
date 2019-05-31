@@ -9,9 +9,9 @@ const MO = (props) => {
       style={{ padding: '20px', display: 'flex', flex: 1, background: 'green' }}
     >
       <div>
-        <Link to="/">HOME</Link>
-        <Link to="/page15">page15</Link>
-        <Link to="/get_item">get_item</Link>
+        <Link to="/ice_pages/home">HOME</Link>
+        <Link to="/ice_pages/page15">page15</Link>
+        <Link to="/ice_pages/ice_home">ice_home</Link>
         project1-------module one</div>
       <div>{JSON.stringify(module_data)} </div>
     </div>

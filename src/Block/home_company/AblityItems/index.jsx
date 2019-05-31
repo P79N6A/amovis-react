@@ -16,8 +16,7 @@ export default class AblityItems extends Component {
     const module_data = this.props;
     return (
       <div className="hy-ability" style={style.hyAbilityStyles}>
-        <Link to="/page15">page15</Link>
-        { JSON.stringify(module_data) }
+        <Link to="/ice_pages/page15">page15</Link>
         <div className="hy-ability-item" style={style.hyAbilityItemStyle}>
           <img
             alt=""
@@ -50,7 +49,7 @@ export default class AblityItems extends Component {
           />
           <h3 style={style.hyAbilityItemTitleStyle}>{module_data.list[2].value}</h3>
           <p style={style.hyAbilityItemSubtitleStyle}>
-          {module_data.list[2].value}
+          {module_data.list[2].des}
           </p>
         </div>
       </div>

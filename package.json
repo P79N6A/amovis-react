@@ -48,14 +48,14 @@
   "scripts": {
     "start": "ice dev",
     "build": "ice build",
-    "build_all": "ice build --debug&& ice build library:true --skip-demo --debug",
-    "build_lib": "ice build library:true --skip-demo",
+    "build_all": "ice build&& ice build library:true",
+    "build_lib": "ice build library:true",
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext '.js,.jsx' --fix"
   },
   "buildConfig": {
     "theme": "@icedesign/theme",
-    "entry": {"web":"src/web.js","server":"src/server.js"},
+    "entry": {"index":"src/index.js","server":"src/server.js"},
     "localization": false,
     "output": {
       "publicPath": "./"

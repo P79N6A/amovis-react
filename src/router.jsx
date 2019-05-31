@@ -115,7 +115,7 @@ function renderRouterConfigV4(container, router, contextPath) {
     renderRoute(container, r, contextPath);
   });
   routeChildren.push(
-    <Redirect to="/" />
+    <Redirect to="/ice_pages/ice_home" />
   );
   return <Switch>{routeChildren}</Switch>;
 }

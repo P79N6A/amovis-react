@@ -37,7 +37,7 @@ export default class CardItems extends Component {
                   src="http://front_public.local.com/ice_project/reactphp/public/images/geocpIkIixaGovHECTdw.svg"
                   alt=""
                 />
-                <h5 style={styles.thirdPartyName}>{module_data.list[0].value}</h5>
+                <h5 style={styles.thirdPartyName}>{module_data.list[0].name}</h5>
                 <p style={styles.thirdPartySold}>
                   已售：
                   <span style={styles.thirdPartySoldNumber}>{module_data.list[0].sold_count}</span>
