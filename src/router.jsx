@@ -1,8 +1,7 @@
 /**
  * 定义应用路
  */
-import { HashRouter as Router } from 'react-router-dom';
-import { Switch, Route } from 'react-router';
+import { Switch, Route, Redirect } from 'react-router';
 import React from 'react';
 
 import routerConfig from './routerConfig';
@@ -17,7 +16,7 @@ function recursiveRouterConfigV4(config = []) {
     const route = {
       path: item.path,
       layout: item.layout,
-      component: CommonPage,
+      component: item.component ? item.component : CommonPage,
       modules: item.modules,
     };
     if (Array.isArray(item.children)) {
@@ -98,7 +97,7 @@ function renderRouterConfigV4(container, router, contextPath) {
             return (
               <routeItem.component data={routeItem.modules} />
             )
-          }} 
+          }}
         />
       );
     }
@@ -115,10 +114,12 @@ function renderRouterConfigV4(container, router, contextPath) {
   router.forEach((r) => {
     renderRoute(container, r, contextPath);
   });
-
+  routeChildren.push(
+    <Redirect to="/ice_pages/ice_home" key="redirect_default" />
+  );
   return <Switch>{routeChildren}</Switch>;
 }
 
 const routerWithReactRouter4 = recursiveRouterConfigV4(routerConfig);
 const routeChildren = renderRouterConfigV4(null, routerWithReactRouter4, '/');
-export default <Router>{routeChildren}</Router>;
+export default routeChildren;

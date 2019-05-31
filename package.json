@@ -48,16 +48,19 @@
   "scripts": {
     "start": "ice dev",
     "build": "ice build",
+    "build_all": "ice build&& ice build library:true",
+    "build_lib": "ice build library:true",
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext '.js,.jsx' --fix"
   },
   "buildConfig": {
     "theme": "@icedesign/theme",
-    "entry": "src/index.js",
+    "entry": {"index":"src/index.js","server":"src/server.js"},
     "localization": false,
     "output": {
       "publicPath": "./"
-    }
+    },
+    "disableVendor": true
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",
