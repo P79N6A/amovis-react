@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import * as M from '../../components/Module';
 import * as B from '../../Block';
 import UtilFetch from '../../utils/fetch';
-import './test.scss'
+import './test.scss';
+var envJson = require("../../.env.json");
 
 const cre = React.createElement
 
@@ -10,12 +11,12 @@ export default class CommonPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      page_module_data: {}
+      page_module_data: {},
+      moduleFetchUrl: envJson.moduleFetchUrl
     };
   }
-
   componentDidMount = () => {
-    const fetchUrl = 'http://laravel.local.com/api/module_api/index/get_modules_data';
+    const fetchUrl = this.state.moduleFetchUrl;
     var headers = new Headers();
     headers.append("Authenticate", 10001);
     headers.append("Content-Type", "application/json");
